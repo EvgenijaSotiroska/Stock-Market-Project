@@ -1,16 +1,20 @@
 package com.example.project1.model;
 
+import com.example.project1.observers.Observer;
+import com.example.project1.observers.Subject;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "historical_data")
 @Data
 @NoArgsConstructor
-public class CompanyDataModel {
+public class CompanyDataModel implements Subject {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -58,5 +62,31 @@ public class CompanyDataModel {
         this.turnoverBest = turnoverBest;
         this.totalTurnover = totalTurnover;
     }
+
+    @Transient
+    private List<Observer> observers = new ArrayList<>();
+
+    @Override
+    public void addObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers() {
+        for (Observer observer : observers) {
+            observer.update(this);
+        }
+    }
+
+    public void setLastTransactionPrice(Double lastTransactionPrice) {
+        this.lastTransactionPrice = lastTransactionPrice;
+        notifyObservers();
+    }
+
 
 }
