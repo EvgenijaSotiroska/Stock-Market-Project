@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  spring-boot-app:
+    build:
+      context: ./project1
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    container_name: spring-boot-app
+    restart: always
+    environment:
+      - TECHNICAL_ANALYSIS_URL=http://flask-app:5000/generate_signal
+      - NLP_URL=http://flask-app:5000/analyze
+      - LSTM_URL=http://fastapi-app:8000/predict-next-month-price
+
+  flask-app:
+    build:
+      context: ./ai/api
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    container_name: flask-app
+    restart: always
+    environment:
+      - FLASK_APP=api.py
+
+  fastapi-app:
+    build:
+      context: ./ai/prediction
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    container_name: fastapi-app
+    restart: always

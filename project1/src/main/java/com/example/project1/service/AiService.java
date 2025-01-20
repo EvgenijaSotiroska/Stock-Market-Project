@@ -25,9 +25,11 @@ public class AiService {
     private final CompanyDataRepository companyDataRepository;
     private final CompanyIssuerRepository companyIssuerRepository;
 
-    private final String technicalAnalysisUrl = "http://127.0.0.1:5000/generate_signal";
-    private final String nlpUrl = "http://127.0.0.1:5000/analyze";
-    private final String lstmUrl = "http://127.0.0.1:8000/predict-next-month-price/";
+    private final String technicalAnalysisUrl =  System.getenv("TECHNICAL_ANALYSIS_URL");
+    private final String nlpUrl = System.getenv("NLP_URL");
+    private final String lstmUrl = System.getenv("LSTM_URL");
+
+
 
     public String technicalAnalysis(Long companyId) {
         // Retrieve historical data from the repository

@@ -1,0 +1,8 @@
+Flask
+numpy
+requests
+beautifulsoup4
+vaderSentiment
+pydantic
+pandas
+statsmodels
