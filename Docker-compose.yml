@@ -12,7 +12,7 @@ services:
     environment:
       - TECHNICAL_ANALYSIS_URL=http://flask-app:5000/generate_signal
       - NLP_URL=http://flask-app:5000/analyze
-      - LSTM_URL=http://fastapi-app:8000/predict-next-month-price
+      - LSTM_URL=http://fastapi-app:8000/predict-next-month-price/
 
   flask-app:
     build:

@@ -169,7 +169,7 @@
                 method: 'GET',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             })
-                .then(response => response.ok ? response.text() : Promise.reject("Error"))
+                // .then(response => response.ok ? response.text() : Promise.reject("Error"))
                 .then(signal => {
                     console.log("Button 2 signal:",signal.recommendation);
                     feedbackElement.textContent =`recommendation: ${signal.recommendation} Sentiment Score: ${signal.sentimentScore}`;
