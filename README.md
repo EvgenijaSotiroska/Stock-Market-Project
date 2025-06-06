@@ -1,2 +1,2 @@
-#Stock Exchange Analysis Web App
+# Stock Exchange Analysis Web App
 The goal of the project is to implement a web application that uses databases, applying various software architecture styles, while incorporating concepts from the lectures. The application focusес on the analysis of the Macedonian Stock Exchange, and  includeс historical daily data from the website of the Macedonian Stock Exchange for all available issuers (companies or institutions).
