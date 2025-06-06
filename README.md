@@ -1,2 +1,2 @@
-Целта на проектот е да се имплементира веб апликациjа коjа користи бази на податоци, користеj´ки различни стилови на архитектура на софтвер, при што треба да се применат концептите од предавањата. Апликациjата треба да се фокусира на анализа на Македонската берза и да вклучува историски дневни податоци од веб-страницата на Македонската берза за сите достапни издавачи (компании или институции). Податоците што ´ке се обработуваат треба да ги покриваат наjмалку последните 10 години на дневно ниво.
-
+#Stock Exchange Analysis Web App
+The goal of the project is to implement a web application that uses databases, applying various software architecture styles, while incorporating concepts from the lectures. The application focusес on the analysis of the Macedonian Stock Exchange, and  includeс historical daily data from the website of the Macedonian Stock Exchange for all available issuers (companies or institutions).
